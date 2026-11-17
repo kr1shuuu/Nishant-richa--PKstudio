@@ -285,6 +285,9 @@
       @media (min-width:640px){ .event-name { font-size:28px; } }
       .event-meta { margin:.25rem 0 0; font-size:1rem; color:var(--dim); }
       .event-venue { margin:.25rem 0 0; font-size:1rem; color:var(--soft); }
+      .event-dir-wrap { margin:.4rem 0 0; }
+      .event-dir { display:inline-block; border-radius:9999px; border:1px solid rgba(201,168,106,.7); padding:.35rem 1rem; font-size:.875rem; font-weight:700; color:var(--gold); text-decoration:none; background:transparent; }
+      .event-dir:active { transform:scale(.95); }
       .event-desc { margin:.25rem 0 0; font-size:1rem; line-height:1.4; color:var(--dim); }
       .event-list-end { border-top:1px solid rgba(122,31,46,.16); }
       .cal-wrap { position:relative; margin-top:.75rem; }
@@ -352,57 +355,6 @@
       .bless-msg { margin:.125rem 0 0; white-space:pre-line; font-size:1.125rem; line-height:1.6; color:var(--soft); overflow-wrap:anywhere; }
       .heart-btn { margin-top:.375rem; background:none; border:0; padding:.25rem 0; font-size:.875rem; color:var(--gold); min-height:2rem; font-family:inherit; }
       .heart-btn:disabled { opacity:.6; }
-
-      /* ---------- RSVP ---------- */
-      .step-dots { margin-top:1rem; display:flex; justify-content:center; gap:.375rem; }
-      .step-dots span { height:.5rem; border-radius:9999px; background:rgba(166,139,100,.35); width:.5rem; transition:all .3s ease; }
-      .step-dots span.done { background:rgba(201,168,106,.7); }
-      .step-dots span.current { width:2rem; background:var(--gold); }
-      .step-label { margin:.5rem 0 0; text-align:center; font-size:.75rem; letter-spacing:.25em; text-transform:uppercase; color:var(--muted); }
-      .choice-btn {
-        display:block; width:100%; border-radius:1rem; border:1px solid rgba(201,168,106,.3); background:rgba(255,252,244,.78);
-        padding:1rem; text-align:left; transition:transform .15s ease; color:var(--ivory); font-family:inherit;
-      }
-      .choice-btn:active { transform:scale(.98); }
-      .choice-btn.selected { border-color:var(--gold); background:rgba(201,168,106,.15); box-shadow:0 0 0 1px var(--gold); }
-      .choice-btn .t { font-family:"Playfair Display", Georgia, serif; font-size:1.125rem; color:var(--ivory); display:block; }
-      .choice-btn .s { display:block; font-size:.875rem; color:var(--dim); }
-      .choice-grid { display:grid; gap:.75rem; }
-      .pick-note { margin:0 0 .75rem; text-align:center; color:var(--dim); font-size:1rem; }
-      .event-pick-grid { display:grid; gap:.5rem; }
-      @media (min-width:640px){ .event-pick-grid { grid-template-columns:1fr 1fr; } }
-      .event-pick {
-        display:block; width:100%; border-radius:.75rem; border:1px solid rgba(201,168,106,.3); background:rgba(255,252,244,.78);
-        padding:.75rem; text-align:left; transition:transform .15s ease; color:var(--ivory); font-family:inherit;
-      }
-      .event-pick:active { transform:scale(.98); }
-      .event-pick.selected { border-color:var(--gold); background:rgba(201,168,106,.15); }
-      .event-pick .t { font-family:"Playfair Display", Georgia, serif; font-size:1rem; color:var(--ivory); display:block; }
-      .event-pick .s { display:block; font-size:.875rem; color:var(--gold); }
-      .guest-row { margin-top:1rem; display:flex; align-items:center; justify-content:center; gap:1.25rem; }
-      .guest-btn {
-        height:3rem; width:3rem; min-height:3rem; border-radius:9999px; border:1px solid rgba(201,168,106,.7); background:transparent;
-        font-size:1.5rem; color:var(--gold); transition:transform .15s ease; line-height:1;
-      }
-      .guest-btn:active { transform:scale(.9); }
-      .guest-num { font-family:"Playfair Display", Georgia, serif; font-size:3rem; color:var(--ivory); font-variant-numeric:tabular-nums; }
-      .summary-box { margin-top:.75rem; border-radius:.75rem; border:1px solid rgba(201,168,106,.3); background:rgba(255,252,244,.78); padding:.75rem; font-size:1rem; color:var(--soft); }
-      .summary-box p { margin:.25rem 0; }
-      .summary-box .k { color:var(--gold); }
-      .rsvp-nav { margin-top:1.25rem; display:flex; align-items:center; justify-content:space-between; gap:.75rem; }
-      .nav-btn {
-        border-radius:9999px; padding:.625rem 1.5rem; font-family:"Playfair Display", Georgia, serif; font-size:.875rem;
-        letter-spacing:.15em; text-transform:uppercase; font-weight:700; transition:transform .15s ease;
-      }
-      .nav-btn:active { transform:scale(.95); }
-      .nav-btn.back { border:1px solid rgba(201,168,106,.6); background:transparent; color:var(--gold); }
-      .nav-btn.next { border:0; background:var(--gold); color:#43290A; }
-      .nav-btn.send { border:0; background:linear-gradient(to right, var(--gold-deep), var(--gold), var(--gold-deep)); color:#43290A; }
-      .nav-btn:disabled { opacity:.4; }
-      .step-hint { margin:.5rem 0 0; text-align:right; font-size:.75rem; color:var(--muted); }
-      .thanks-emoji { text-align:center; font-size:2.25rem; margin:0; }
-      .thanks-h3 { margin:.5rem 0 0; text-align:center; font-family:"Playfair Display", Georgia, serif; font-weight:600; font-size:1.5rem; color:var(--ivory); }
-      .thanks-p { margin:.5rem 0 0; text-align:center; font-size:1.125rem; color:var(--soft); }
 
       /* ---------- footer ---------- */
       footer.end { margin-top:4rem; text-align:center; }
@@ -490,7 +442,6 @@
       .event-list { background:rgba(255,249,236,.95); border:1px solid rgba(156,122,36,.55); border-radius:20px; box-shadow:0 14px 34px rgba(101,67,20,.22); overflow:hidden; }
       .stat-pill { background:rgba(255,249,236,.92); }
       .bless-card { background:rgba(255,251,240,.95); }
-      .choice-btn, .event-pick, .summary-box { background:rgba(255,252,244,.94); }
       /* ---------- readability over the painting: Events & free-standing text ---------- */
       .events-kicker { color:#75530C; font-weight:700; background:rgba(255,249,236,.92); border:1px solid rgba(156,122,36,.6); border-radius:999px; padding:.4rem 1.15rem; width:fit-content; margin:0 auto; box-shadow:0 6px 18px rgba(101,67,20,.20); text-shadow:none; }
       .events-h2 { color:#4A0E1A; }
@@ -817,40 +768,6 @@
           <div class="bless-list" id="bless-list"></div>
         </section>
 
-        <!-- RSVP -->
-        <section class="block" id="rsvp-section">
-          <div id="rsvp-main">
-            <div class="section-title reveal"><p class="script">Join Us</p><h2>Please RSVP :)</h2>
-              <div class="divider" aria-hidden="true"><span class="line"></span><span class="diamond">◆</span><span class="pearl-dot"></span><span class="diamond">◆</span><span class="line"></span></div>
-            </div>
-            <p class="section-lead">Kindly confirm your attendance so the families can prepare every detail with care.</p>
-            <div class="step-dots" id="step-dots" aria-hidden="true"></div>
-            <p class="step-label" id="step-label"></p>
-            <div class="frame" style="margin-top:1rem">
-              <span class="inner-border" aria-hidden="true"></span>
-              <div id="rsvp-step-body"></div>
-              <p class="err-text" id="rsvp-err" role="alert" hidden style="margin-top:.75rem;text-align:center"></p>
-              <div class="rsvp-nav">
-                <span id="rsvp-back-slot"></span>
-                <span id="rsvp-next-slot"></span>
-              </div>
-              <p class="step-hint" id="rsvp-hint" hidden></p>
-            </div>
-          </div>
-          <div id="rsvp-done" hidden>
-            <div class="section-title reveal"><p class="script">Thank You</p><h2>Please RSVP :)</h2>
-              <div class="divider" aria-hidden="true"><span class="line"></span><span class="diamond">◆</span><span class="pearl-dot"></span><span class="diamond">◆</span><span class="line"></span></div>
-            </div>
-            <div class="frame" style="margin-top:1rem">
-              <span class="inner-border" aria-hidden="true"></span>
-              <p class="thanks-emoji" aria-hidden="true">💌</p>
-              <h3 class="thanks-h3" id="thanks-title">Thank you!</h3>
-              <p class="thanks-p" id="thanks-text"></p>
-              <div class="mt-4 centre"><button type="button" class="outline-btn" id="rsvp-again" aria-label="Send another RSVP" style="padding:.5rem 1.5rem">Send another RSVP</button></div>
-            </div>
-          </div>
-        </section>
-
         <!-- Share the Moment -->
         <section class="block">
           <div class="section-title reveal"><p class="script">Share the Moment</p><h2>#RajKiRicha</h2>
@@ -884,9 +801,10 @@
       var COUPLE_SHORT = "Dr Nishant & Dr Richa";
       var WEDDING_TARGET = new Date("2026-12-07T10:00:00").getTime();
       var EVENTS = [
-        { name: "Matkor & Haldi Kalash", dateLabel: "Thursday, 3 December 2026", timeLabel: "", venue: "", description: "", startIso: "2026-12-03T10:00", endIso: "2026-12-03T13:00" },
-        { name: "Ghritdhari", dateLabel: "Friday, 4 December 2026", timeLabel: "", venue: "", description: "", startIso: "2026-12-04T10:00", endIso: "2026-12-04T13:00" },
-        { name: "Shubh Vivah", dateLabel: "Monday, 7 December 2026", timeLabel: "10:00 AM – 2:00 PM", venue: "ISKCON Rohini, Plot No-3, Institutional Area, Main Road, Sector 25, Rohini, New Delhi, Delhi 110085, India", description: "The wedding ceremony — join us as we celebrate the beginning of our forever with family, friends, and blessings.", startIso: "2026-12-07T10:00", endIso: "2026-12-07T14:00" },
+        { name: "Mata Ka Jagrata", dateLabel: "Tuesday, 1 December 2026", timeLabel: "6:00 PM", venue: "Sukhdev Nagar Thana, Ravi Pharma Gali, Ratu Road, Ranchi", description: "", startIso: "2026-12-01T18:00", endIso: "2026-12-01T21:00", directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Sukhdev%20Nagar%20Thana%2C%20Ravi%20Pharma%20Gali%2C%20Ratu%20Road%2C%20Ranchi" },
+        { name: "Matkor & Haldi Kalash", dateLabel: "Thursday, 3 December 2026", timeLabel: "", venue: "Sukhdev Nagar Thana, Ravi Pharma Gali, Ratu Road, Ranchi", description: "", startIso: "2026-12-03T10:00", endIso: "2026-12-03T13:00", directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Sukhdev%20Nagar%20Thana%2C%20Ravi%20Pharma%20Gali%2C%20Ratu%20Road%2C%20Ranchi" },
+        { name: "Ghritdhari", dateLabel: "Friday, 4 December 2026", timeLabel: "", venue: "Sukhdev Nagar Thana, Ravi Pharma Gali, Ratu Road, Ranchi", description: "", startIso: "2026-12-04T10:00", endIso: "2026-12-04T13:00", directionsUrl: "https://www.google.com/maps/dir/?api=1&destination=Sukhdev%20Nagar%20Thana%2C%20Ravi%20Pharma%20Gali%2C%20Ratu%20Road%2C%20Ranchi" },
+        { name: "Shubh Vivah", dateLabel: "Monday, 7 December 2026", timeLabel: "10:00 AM – 2:00 PM", venue: "ISKCON Rohini, Plot No-3, Institutional Area, Main Road, Sector 25, Rohini, New Delhi, Delhi 110085, India", description: "", startIso: "2026-12-07T10:00", endIso: "2026-12-07T14:00" },
         { name: "Welcome Ceremony & Reception", dateLabel: "Thursday, 10 December 2026", timeLabel: "7:00 PM onwards", venue: "", description: "", startIso: "2026-12-10T19:00", endIso: "2026-12-10T22:00" }
       ];
       var blessings = [];
@@ -1379,6 +1297,7 @@
             '<h3 class="event-name">' + esc(e.name) + '</h3>' +
             '<p class="event-meta">' + esc(dateLine) + '</p>';
           if (e.venue) html += '<p class="event-venue">📍 ' + esc(e.venue) + '</p>';
+          if (e.directionsUrl) html += '<p class="event-dir-wrap"><a class="event-dir" href="' + esc(e.directionsUrl) + '" target="_blank" rel="noopener" aria-label="Get directions to ' + esc(e.name) + '">🧭 Get Directions</a></p>';
           if (e.description) html += '<p class="event-desc">' + esc(e.description) + '</p>';
           html += '<div class="cal-wrap">' +
             '<button type="button" class="cal-btn" aria-label="Add ' + esc(e.name) + ' to calendar" aria-expanded="false">📅 Add to Calendar ▾</button>' +
@@ -1501,163 +1420,6 @@
         $("bless-message").value = "";
         renderBlessings();
       });
-
-      /* ================= 5-step RSVP (this visit only) ================= */
-      var RSVP_CHOICES = [
-        { key: "yes", title: "Yes — Joyfully", sub: "We will be there" },
-        { key: "maybe", title: "Maybe — Still confirming", sub: "We will let you know soon" },
-        { key: "no", title: "No — Regretfully", sub: "Decline · Sending love" }
-      ];
-      var STEP_NAMES = ["Response", "Events", "Guests", "Details", "Blessing"];
-      var rsvp = { step: 1, response: "", selected: [], guests: 2, name: "", phone: "+91 ", email: "", blessing: "" };
-      function renderRsvp() {
-        var body = $("rsvp-step-body");
-        var dots = $("step-dots");
-        dots.innerHTML = "";
-        for (var n = 1; n <= 5; n++) {
-          var d = document.createElement("span");
-          if (n === rsvp.step) d.className = "current";
-          else if (n < rsvp.step) d.className = "done";
-          dots.appendChild(d);
-        }
-        $("step-label").textContent = "Step " + rsvp.step + " of 5 — " + STEP_NAMES[rsvp.step - 1];
-        var err = $("rsvp-err"); err.hidden = true;
-        var hint = $("rsvp-hint"); hint.hidden = true;
-        body.innerHTML = "";
-
-        if (rsvp.step === 1) {
-          var grid = document.createElement("div");
-          grid.className = "choice-grid";
-          RSVP_CHOICES.forEach(function (c) {
-            var b = document.createElement("button");
-            b.type = "button";
-            b.className = "choice-btn" + (rsvp.response === c.key ? " selected" : "");
-            b.setAttribute("aria-label", "RSVP response: " + c.title);
-            b.setAttribute("aria-pressed", String(rsvp.response === c.key));
-            b.innerHTML = '<span class="t">' + (rsvp.response === c.key ? "● " : "○ ") + esc(c.title) + '</span><span class="s">' + esc(c.sub) + '</span>';
-            b.addEventListener("click", function () { rsvp.response = c.key; renderRsvp(); });
-            grid.appendChild(b);
-          });
-          body.appendChild(grid);
-          if (!rsvp.response) { hint.textContent = "Choose a response to continue"; hint.hidden = false; }
-        } else if (rsvp.step === 2) {
-          var note = document.createElement("p");
-          note.className = "pick-note";
-          note.textContent = "Tap the events you will attend:";
-          body.appendChild(note);
-          var eg = document.createElement("div");
-          eg.className = "event-pick-grid";
-          EVENTS.forEach(function (e) {
-            var sel = rsvp.selected.indexOf(e.name) !== -1;
-            var b = document.createElement("button");
-            b.type = "button";
-            b.className = "event-pick" + (sel ? " selected" : "");
-            b.setAttribute("aria-label", "Select event " + e.name);
-            b.setAttribute("aria-pressed", String(sel));
-            b.innerHTML = '<span class="t">' + (sel ? "✓ " : "") + esc(e.name) + '</span><span class="s">' + esc(e.dateLabel) + (e.timeLabel ? " · " + esc(e.timeLabel) : "") + '</span>';
-            b.addEventListener("click", function () {
-              var i = rsvp.selected.indexOf(e.name);
-              if (i === -1) rsvp.selected.push(e.name); else rsvp.selected.splice(i, 1);
-              renderRsvp();
-            });
-            eg.appendChild(b);
-          });
-          body.appendChild(eg);
-        } else if (rsvp.step === 3) {
-          var wrap = document.createElement("div");
-          wrap.style.textAlign = "center";
-          wrap.innerHTML = '<p style="color:#8A6D4F;margin:0">How many guests, including yourself?</p>' +
-            '<div class="guest-row">' +
-            '<button type="button" class="guest-btn" id="guest-minus" aria-label="One fewer guest">−</button>' +
-            '<span class="guest-num" aria-live="polite">' + rsvp.guests + '</span>' +
-            '<button type="button" class="guest-btn" id="guest-plus" aria-label="One more guest">+</button>' +
-            '</div><p style="margin:.75rem 0 0;font-size:.875rem;color:#A68B64">Including yourself</p>';
-          body.appendChild(wrap);
-          $("guest-minus").addEventListener("click", function () { rsvp.guests = Math.max(1, rsvp.guests - 1); renderRsvp(); });
-          $("guest-plus").addEventListener("click", function () { rsvp.guests = Math.min(20, rsvp.guests + 1); renderRsvp(); });
-        } else if (rsvp.step === 4) {
-          var form = document.createElement("div");
-          form.className = "choice-grid";
-          form.innerHTML =
-            '<label class="field-label">Full Name *<input class="input" id="rsvp-name" aria-label="RSVP full name" maxlength="80" placeholder="Your full name" value="' + esc(rsvp.name) + '" /></label>' +
-            '<label class="field-label">Phone (WhatsApp)<input class="input" id="rsvp-phone" aria-label="RSVP phone number on WhatsApp" maxlength="30" inputmode="tel" placeholder="+91 " value="' + esc(rsvp.phone) + '" /></label>' +
-            '<label class="field-label">Email Address<input class="input" id="rsvp-email" aria-label="RSVP email address" maxlength="120" inputmode="email" placeholder="you@example.com" value="' + esc(rsvp.email) + '" /></label>';
-          body.appendChild(form);
-          $("rsvp-name").addEventListener("input", function (e) { rsvp.name = e.target.value; renderNav(); });
-          $("rsvp-phone").addEventListener("input", function (e) { rsvp.phone = e.target.value; });
-          $("rsvp-email").addEventListener("input", function (e) { rsvp.email = e.target.value; });
-          if (!rsvp.name.trim()) { hint.textContent = "Your full name is required to continue"; hint.hidden = false; }
-        } else if (rsvp.step === 5) {
-          var wrap5 = document.createElement("div");
-          var choice = RSVP_CHOICES.filter(function (c) { return c.key === rsvp.response; })[0];
-          wrap5.innerHTML =
-            '<label class="field-label">A Blessing for the Couple <span style="text-transform:none;letter-spacing:normal;color:#A68B64">(optional — it will also appear in Blessings &amp; Wishes)</span>' +
-            '<textarea class="input" id="rsvp-blessing" aria-label="RSVP blessing for the couple" rows="4" maxlength="1000" placeholder="May your life together be filled with love, laughter and blessings…">' + esc(rsvp.blessing) + '</textarea></label>' +
-            '<div class="summary-box">' +
-            '<p><span class="k">Response:</span> ' + esc(choice ? choice.title : "") + '</p>' +
-            '<p><span class="k">Events:</span> ' + esc(rsvp.selected.length ? rsvp.selected.join(", ") : "—") + '</p>' +
-            '<p><span class="k">Guests:</span> ' + rsvp.guests + ' · <span class="k">Name:</span> ' + esc(rsvp.name || "—") + '</p>' +
-            '</div>';
-          body.appendChild(wrap5);
-          $("rsvp-blessing").addEventListener("input", function (e) { rsvp.blessing = e.target.value; });
-        }
-        renderNav();
-      }
-      function renderNav() {
-        var back = $("rsvp-back-slot");
-        var next = $("rsvp-next-slot");
-        back.innerHTML = "";
-        next.innerHTML = "";
-        if (rsvp.step > 1) {
-          var bb = document.createElement("button");
-          bb.type = "button";
-          bb.className = "nav-btn back";
-          bb.setAttribute("aria-label", "Back to previous RSVP step");
-          bb.textContent = "← Back";
-          bb.addEventListener("click", function () { rsvp.step -= 1; renderRsvp(); });
-          back.appendChild(bb);
-        }
-        if (rsvp.step < 5) {
-          var nb = document.createElement("button");
-          nb.type = "button";
-          nb.className = "nav-btn next";
-          nb.setAttribute("aria-label", "Continue to next RSVP step");
-          nb.textContent = "Continue →";
-          nb.disabled = (rsvp.step === 1 && !rsvp.response) || (rsvp.step === 4 && !rsvp.name.trim());
-          nb.addEventListener("click", function () { rsvp.step += 1; renderRsvp(); });
-          next.appendChild(nb);
-        } else {
-          var sb = document.createElement("button");
-          sb.type = "button";
-          sb.className = "nav-btn send";
-          sb.setAttribute("aria-label", "Submit RSVP");
-          sb.textContent = "Send RSVP 💌";
-          sb.disabled = !rsvp.response || !rsvp.name.trim();
-          sb.addEventListener("click", submitRsvp);
-          next.appendChild(sb);
-        }
-      }
-      function submitRsvp() {
-        var first = rsvp.name.trim().split(" ")[0] || "";
-        $("thanks-title").textContent = "Thank you, " + first + "!";
-        $("thanks-text").textContent = rsvp.response === "no"
-          ? "Your RSVP has been received with joy. You will be missed — thank you for your love and blessings."
-          : "Your RSVP has been received with joy. The families are preparing every detail with care, and we can't wait to celebrate with you.";
-        if (rsvp.blessing.trim()) {
-          blessings.unshift({ id: nextBlessingId++, name: rsvp.name.trim(), message: rsvp.blessing.trim(), hearts: 0 });
-          renderBlessings();
-        }
-        $("rsvp-main").hidden = true;
-        $("rsvp-done").hidden = false;
-        $("rsvp-section").scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-      $("rsvp-again").addEventListener("click", function () {
-        rsvp = { step: 1, response: "", selected: [], guests: 2, name: "", phone: "+91 ", email: "", blessing: "" };
-        $("rsvp-done").hidden = true;
-        $("rsvp-main").hidden = false;
-        renderRsvp();
-      });
-      renderRsvp();
 
       /* ================= footer ================= */
       $("back-top").addEventListener("click", function () { window.scrollTo({ top: 0, behavior: "smooth" }); });
